@@ -291,39 +291,6 @@ body{
   backdrop-filter:blur(12px);
   border-radius:18px
 }
-.moving-text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 70px;
-  width: 100%;
-  overflow: hidden;
-  pointer-events: none;
-  white-space: nowrap;
-  opacity: 0.12;
-  z-index: 1;
-}
-
-.moving-text-track {
-  display: inline-block;
-  font-family: Orbitron, sans-serif;
-  font-size: clamp(32px, 5vw, 70px);
-  font-weight: 700;
-  letter-spacing: 8px;
-  color: #00ffe0;
-  animation: movingText 25s linear infinite;
-  text-transform: uppercase;
-}
-
-@keyframes movingText {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
 .stats{
   max-width:1060px;
   margin:-10px auto 0;
