@@ -3,847 +3,1173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assistify | Get Help. Move Forward.</title>
+
+<title>Assistify | Get Help Move Forward</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 :root{
-  --white:#f4f4f4;
-  --light:#fff;
-  --dark:#cfcfcf;
-  --red:#c91624;
-  --red-dark:#a70e19;
-  --text:#202124;
-  --muted:#707070;
+    --white:#f4f4f4;
+    --light:#ffffff;
+    --dark:#cfcfcf;
+    --shadow-dark:#c8c8c8;
+    --shadow-light:#ffffff;
+    --red:#c91624;
+    --red-dark:#a70e19;
+    --text:#202124;
+    --muted:#707070;
 }
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-  min-height:100vh;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#050505;
-  color:var(--text);
-  padding:25px 12px;
+    min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050505;
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    padding:25px 12px;
 }
 
-a{text-decoration:none;color:inherit}
+
+/* =========================================
+   MAIN EMBOSSED DEVICE
+========================================= */
 
 .page{
-  width:100%;
-  max-width:760px;
-  margin:auto;
-  background:linear-gradient(145deg,#fff,#eee);
-  border-radius:55px;
-  padding:28px 42px 30px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:
-    18px 18px 45px rgba(0,0,0,.45),
-    -12px -12px 35px rgba(255,255,255,.08),
-    inset 3px 3px 10px rgba(255,255,255,.9),
-    inset -4px -4px 12px rgba(180,180,180,.5);
+    width:100%;
+    max-width:760px;
+    min-height:calc(100vh - 50px);
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #eeeeee
+    );
+
+    border-radius:55px;
+
+    padding:48px 42px 28px;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:
+        18px 18px 45px rgba(0,0,0,.45),
+        -12px -12px 35px rgba(255,255,255,.08),
+        inset 3px 3px 10px rgba(255,255,255,.9),
+        inset -4px -4px 12px rgba(180,180,180,.5);
 }
+
+
+/* RED TOP DETAIL */
 
 .page::before{
-  content:"";
-  position:absolute;
-  top:0;left:50%;
-  transform:translateX(-50%);
-  width:310px;height:15px;
-  background:var(--red);
-  border-radius:0 0 30px 30px;
-  box-shadow:0 4px 8px rgba(201,22,36,.35),inset 0 -3px 4px rgba(120,0,0,.25);
-}
+    content:"";
 
-.topbar{
-  position:relative;
-  z-index:5;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin:14px 0 22px;
-}
+    position:absolute;
+    top:0;
+    left:50%;
 
-.mini-brand{
-  font-weight:900;
-  letter-spacing:3px;
-  font-size:14px;
-}
+    transform:translateX(-50%);
 
-.mini-brand span{color:var(--red)}
+    width:310px;
+    height:15px;
 
-.menu{
-  display:flex;
-  gap:8px;
-}
+    background:var(--red);
 
-.menu a{
-  padding:10px 14px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:#555;
-  transition:.25s ease;
-}
+    border-radius:0 0 30px 30px;
 
-.menu a:hover{
-  color:var(--red);
-  background:#eee;
-  box-shadow:inset 3px 3px 7px #d0d0d0,inset -3px -3px 7px #fff;
+    box-shadow:
+        0 4px 8px rgba(201,22,36,.35),
+        inset 0 -3px 4px rgba(120,0,0,.25);
 }
 
 
-.header-cta{
-  padding:12px 17px;
-  border-radius:24px;
-  color:#fff;
-  background:linear-gradient(145deg,#ed2635,#b90f1c);
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-  box-shadow:5px 5px 12px #bbb,-4px -4px 10px #fff;
-  transition:.25s ease;
-}
-.header-cta:hover{transform:translateY(-2px);filter:brightness(1.06)}
+/*
+   IMPORTANT:
+   The previous decorative page::after
+   has been completely removed.
 
-.mini-brand{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-.mini-brand i{color:var(--red);font-size:14px}
+   This removes the white flare/glow
+   appearing around the contact section.
+*/
 
-.hero{
-  text-align:center;
-  padding:18px 0 24px;
-}
 
-.website-intro{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:30px;
-  align-items:center;
-  margin:10px 0 28px;
-  padding:34px 30px;
-  border-radius:38px;
-  background:linear-gradient(145deg,#f9f9f9,#e5e5e5);
-  box-shadow:10px 10px 22px #c4c4c4,-10px -10px 22px #fff,
-             inset 2px 2px 6px rgba(255,255,255,.9),
-             inset -3px -3px 7px rgba(180,180,180,.35);
-  overflow:hidden;
-}
-
-.intro-copy h2{
-  font-size:34px;
-  line-height:1.15;
-  margin:8px 0 14px;
-  color:#222;
-}
-.intro-copy p{
-  color:#666;
-  font-size:15px;
-  line-height:1.8;
-  max-width:470px;
-}
-.intro-actions{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:22px;
-}
-.text-link{
-  color:var(--red);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-.text-link i{margin-left:5px}
-
-.intro-visual{
-  min-height:290px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.visual-ring{
-  width:230px;height:230px;
-  border-radius:50%;
-  border:2px solid rgba(201,22,36,.18);
-  box-shadow:inset 8px 8px 18px rgba(190,190,190,.25),
-             inset -8px -8px 18px rgba(255,255,255,.8);
-}
-.visual-center{
-  position:absolute;
-  width:105px;height:105px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--red);
-  font-size:44px;
-  background:linear-gradient(145deg,#fff,#e5e5e5);
-  box-shadow:10px 10px 20px #c3c3c3,-10px -10px 20px #fff;
-}
-.visual-card{
-  position:absolute;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:12px 15px;
-  border-radius:20px;
-  background:linear-gradient(145deg,#fff,#e8e8e8);
-  box-shadow:6px 6px 13px #c5c5c5,-6px -6px 13px #fff;
-  font-size:11px;
-  font-weight:900;
-  color:#444;
-}
-.visual-card i{color:var(--red)}
-.card-one{top:18px;right:0}
-.card-two{bottom:18px;left:0}
-.card-three{top:50%;right:-2px;transform:translateY(-50%)}
-
-.site-social{
-  margin:12px 0 32px;
-  padding-top:6px;
-}
-
-.section{
-  margin-bottom:26px;
-}
-
-@media(max-width:600px){
-  .topbar{gap:7px}
-  .mini-brand{font-size:12px;letter-spacing:2px}
-  .menu{display:none}
-  .header-cta{font-size:9px;padding:10px 12px}
-
-  .website-intro{
-    grid-template-columns:1fr;
-    padding:24px 20px;
-    gap:12px;
-  }
-  .intro-copy{text-align:center}
-  .intro-copy h2{font-size:27px}
-  .intro-copy p{font-size:13px}
-  .intro-actions{justify-content:center}
-  .intro-visual{min-height:250px}
-  .visual-ring{width:190px;height:190px}
-  .visual-center{width:88px;height:88px;font-size:36px}
-  .visual-card{font-size:9px;padding:9px 11px}
-  .card-one{right:0}
-  .card-two{left:0}
-}
-
-.hero{text-align:center;padding:10px 0 20px}
+/* =========================================
+   BUDDHA LOGO
+========================================= */
 
 .logo-wrap{
-  width:185px;height:185px;
-  margin:0 auto 24px;
-  border-radius:50%;
-  background:linear-gradient(145deg,#fff,#e5e5e5);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:12px 12px 25px #c7c7c7,-12px -12px 25px #fff,
-             inset 3px 3px 8px rgba(255,255,255,.9),
-             inset -4px -4px 10px rgba(190,190,190,.5);
+    width:185px;
+    height:185px;
+
+    margin:0 auto 24px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e5e5e5
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    box-shadow:
+        12px 12px 25px #c7c7c7,
+        -12px -12px 25px #ffffff,
+        inset 3px 3px 8px rgba(255,255,255,.9),
+        inset -4px -4px 10px rgba(190,190,190,.5);
 }
 
 .logo-inner{
-  width:145px;height:145px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(145deg,#f9f9f9,#e7e7e7);
-  box-shadow:inset 5px 5px 12px rgba(190,190,190,.55),
-             inset -5px -5px 12px rgba(255,255,255,.9),
-             4px 4px 10px rgba(180,180,180,.25);
+    width:145px;
+    height:145px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        145deg,
+        #f9f9f9,
+        #e7e7e7
+    );
+
+    box-shadow:
+        inset 5px 5px 12px rgba(190,190,190,.55),
+        inset -5px -5px 12px rgba(255,255,255,.9),
+        4px 4px 10px rgba(180,180,180,.25);
 }
 
 .buddha{
-  color:var(--red);
-  font-size:78px;
-  filter:drop-shadow(2px 2px 2px #8e8e8e) drop-shadow(-1px -1px 1px #fff);
+    color:var(--red);
+
+    font-size:78px;
+
+    filter:
+        drop-shadow(2px 2px 2px #8e8e8e)
+        drop-shadow(-1px -1px 1px #ffffff);
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand{
+    text-align:center;
 }
 
 .brand h1{
-  font-size:58px;font-weight:900;letter-spacing:10px;line-height:1;
-  color:#222;
-  text-shadow:2px 2px 2px #bcbcbc,-1px -1px 1px #fff;
+    font-size:58px;
+
+    font-weight:900;
+
+    letter-spacing:10px;
+
+    line-height:1;
+
+    color:#222;
+
+    text-shadow:
+        2px 2px 2px #bcbcbc,
+        -1px -1px 1px #ffffff;
 }
 
 .brand h1 span{
-  color:var(--red);
-  text-shadow:2px 2px 2px #9e9e9e,-1px -1px 1px #fff;
+    color:var(--red);
+
+    text-shadow:
+        2px 2px 2px #9e9e9e,
+        -1px -1px 1px #ffffff;
 }
 
 .brand-line{
-  width:300px;height:4px;margin:22px auto 18px;
-  background:var(--red);border-radius:10px;
-  box-shadow:0 2px 3px #aaa,inset 0 1px 1px rgba(255,255,255,.5);
+    width:300px;
+    height:4px;
+
+    margin:22px auto 18px;
+
+    background:var(--red);
+
+    border-radius:10px;
+
+    box-shadow:
+        0 2px 3px #aaa,
+        inset 0 1px 1px rgba(255,255,255,.5);
 }
 
 .brand-subtitle{
-  font-size:19px;letter-spacing:8px;color:#555;font-weight:500;
+    font-size:19px;
+
+    letter-spacing:8px;
+
+    color:#555;
+
+    font-weight:500;
 }
+
+
+/* =========================================
+   GET HELP MOVE FORWARD PILL
+========================================= */
 
 .info-pill{
-  margin:28px auto 18px;
-  width:min(470px,90%);
-  min-height:58px;
-  border-radius:35px;
-  display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(145deg,#fff,#e8e8e8);
-  box-shadow:8px 8px 16px #c8c8c8,-8px -8px 16px #fff,
-             inset 2px 2px 5px rgba(255,255,255,.9),
-             inset -2px -2px 5px rgba(190,190,190,.35);
-  color:var(--red);
-  font-size:17px;font-weight:900;letter-spacing:4px;
-  text-transform:uppercase;
+    margin:28px auto 25px;
+
+    width:min(470px,90%);
+
+    min-height:58px;
+
+    border-radius:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e8e8e8
+    );
+
+    box-shadow:
+        8px 8px 16px #c8c8c8,
+        -8px -8px 16px #ffffff,
+        inset 2px 2px 5px rgba(255,255,255,.9),
+        inset -2px -2px 5px rgba(190,190,190,.35);
+
+    color:var(--red);
+
+    font-size:17px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        1px 1px 1px #ffffff,
+        1px 2px 2px rgba(120,0,0,.25);
 }
 
-.hero-copy{
-  max-width:590px;
-  margin:18px auto 0;
-  color:#666;
-  line-height:1.8;
-  font-size:15px;
-}
 
-.hero-actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin:25px auto 10px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  min-width:180px;
-  padding:15px 20px;
-  border-radius:28px;
-  font-weight:900;
-  font-size:13px;
-  letter-spacing:1.5px;
-  transition:.25s ease;
-}
-
-.btn-primary{
-  color:#fff;
-  background:linear-gradient(145deg,#ed2635,#b90f1c);
-  box-shadow:7px 7px 15px #bcbcbc,-7px -7px 15px #fff;
-}
-
-.btn-secondary{
-  color:var(--red);
-  background:linear-gradient(145deg,#fff,#e7e7e7);
-  box-shadow:7px 7px 15px #c7c7c7,-7px -7px 15px #fff;
-}
-
-.btn:hover{transform:translateY(-3px)}
+/* =========================================
+   SOCIAL ICONS
+========================================= */
 
 .social{
-  display:flex;justify-content:center;gap:18px;margin:22px 0 38px;
+    display:flex;
+
+    justify-content:center;
+
+    gap:22px;
+
+    margin:22px 0 34px;
 }
 
 .social a{
-  width:62px;height:62px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--red);
-  background:linear-gradient(145deg,#fff,#e7e7e7);
-  font-size:25px;
-  box-shadow:8px 8px 17px #c6c6c6,-8px -8px 17px #fff,
-             inset 2px 2px 5px rgba(255,255,255,.8),
-             inset -2px -2px 5px rgba(180,180,180,.35);
-  transition:.25s ease;
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:var(--red);
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e7e7e7
+    );
+
+    font-size:32px;
+
+    box-shadow:
+        8px 8px 17px #c6c6c6,
+        -8px -8px 17px #ffffff,
+        inset 2px 2px 5px rgba(255,255,255,.8),
+        inset -2px -2px 5px rgba(180,180,180,.35);
+
+    transition:.25s ease;
 }
 
 .social a:hover{
-  transform:translateY(-4px);
-  color:#fff;background:var(--red);
-  box-shadow:5px 5px 12px #aaa,-5px -5px 12px #fff,
-             0 8px 20px rgba(201,22,36,.25);
+    transform:translateY(-4px);
+
+    color:#fff;
+
+    background:var(--red);
+
+    box-shadow:
+        5px 5px 12px #aaa,
+        -5px -5px 12px #fff,
+        0 8px 20px rgba(201,22,36,.25);
 }
 
-.section{
-  margin:0 0 24px;
-  padding:30px 28px;
-  border-radius:38px;
-  background:linear-gradient(145deg,#f8f8f8,#e6e6e6);
-  box-shadow:10px 10px 22px #c4c4c4,-10px -10px 22px #fff,
-             inset 2px 2px 6px rgba(255,255,255,.9),
-             inset -3px -3px 7px rgba(180,180,180,.35);
+
+/* =========================================
+   MAIN LINK CARDS
+========================================= */
+
+.links{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    margin-bottom:30px;
 }
 
-.section-heading{
-  display:flex;align-items:center;gap:16px;margin-bottom:18px;
+.link-card{
+    min-height:120px;
+
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    padding:18px 25px;
+
+    border-radius:35px;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e9e9e9
+    );
+
+    border-left:8px solid var(--red);
+
+    box-shadow:
+        10px 10px 20px #c6c6c6,
+        -10px -10px 20px #ffffff,
+        inset 2px 2px 5px rgba(255,255,255,.8),
+        inset -2px -2px 6px rgba(180,180,180,.3);
+
+    transition:.25s ease;
 }
 
-.section-icon{
-  width:58px;height:58px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--red);font-size:23px;
-  background:linear-gradient(145deg,#fff,#e8e8e8);
-  box-shadow:6px 6px 12px #c6c6c6,-6px -6px 12px #fff;
-  flex:none;
+.link-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        6px 6px 15px #bdbdbd,
+        -6px -6px 15px #ffffff,
+        0 8px 22px rgba(201,22,36,.16);
 }
 
-.eyebrow{
-  color:var(--red);
-  font-size:11px;font-weight:900;letter-spacing:2.5px;
-  text-transform:uppercase;margin-bottom:5px;
+.link-icon{
+    width:75px;
+    height:75px;
+
+    min-width:75px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--red);
+
+    font-size:30px;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e7e7e7
+    );
+
+    box-shadow:
+        7px 7px 14px #c7c7c7,
+        -7px -7px 14px #ffffff,
+        inset 2px 2px 5px rgba(255,255,255,.9),
+        inset -2px -2px 5px rgba(180,180,180,.35);
 }
 
-.section h2{
-  font-size:25px;
-  font-weight:900;
+.link-content{
+    flex:1;
+
+    margin-left:25px;
 }
 
-.section p{
-  color:#666;
-  font-size:15px;
-  line-height:1.8;
+.link-label{
+    color:var(--red);
+
+    font-size:15px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:5px;
 }
 
-.help-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:20px;
+.link-title{
+    font-size:25px;
+
+    font-weight:800;
+
+    margin-bottom:5px;
 }
 
-.help-card{
-  padding:22px 18px;
-  border-radius:26px;
-  background:linear-gradient(145deg,#fff,#e9e9e9);
-  box-shadow:7px 7px 15px #c8c8c8,-7px -7px 15px #fff;
+.link-desc{
+    font-size:15px;
+
+    color:#686868;
+
+    letter-spacing:1px;
 }
 
-.help-card i{
-  color:var(--red);
-  font-size:24px;
-  margin-bottom:12px;
+.arrow{
+    width:60px;
+    height:60px;
+
+    min-width:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--red);
+
+    font-size:22px;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e7e7e7
+    );
+
+    box-shadow:
+        6px 6px 12px #c6c6c6,
+        -6px -6px 12px #ffffff,
+        inset 2px 2px 4px rgba(255,255,255,.8);
 }
 
-.help-card h3{
-  font-size:16px;
-  margin-bottom:7px;
-}
 
-.help-card p{
-  font-size:13px;
-  line-height:1.6;
-}
-
-.steps{
-  display:flex;
-  flex-direction:column;
-  gap:13px;
-  margin-top:20px;
-}
-
-.step{
-  display:flex;align-items:center;gap:16px;
-  padding:15px 18px;
-  border-radius:24px;
-  background:linear-gradient(145deg,#fff,#e9e9e9);
-  box-shadow:6px 6px 13px #c8c8c8,-6px -6px 13px #fff;
-}
-
-.step-number{
-  width:42px;height:42px;min-width:42px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;background:var(--red);
-  font-weight:900;
-  box-shadow:4px 4px 9px #bbb,-3px -3px 7px #fff;
-}
-
-.step strong{font-size:15px}
-.step span{display:block;color:#707070;font-size:13px;margin-top:3px}
-
-.quote{
-  text-align:center;
-  padding:26px 18px;
-}
-
-.quote i{
-  color:var(--red);
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-.quote p{
-  font-size:20px;
-  font-weight:800;
-  color:#333;
-  line-height:1.5;
-}
-
-.quote small{
-  display:block;
-  margin-top:12px;
-  color:#777;
-  letter-spacing:1px;
-}
+/* =========================================
+   CONTACT SECTION
+========================================= */
 
 .contact{
-  border-radius:38px;
-  padding:28px;
-  background:linear-gradient(145deg,#f8f8f8,#e6e6e6);
-  box-shadow:10px 10px 22px #c4c4c4,-10px -10px 22px #fff,
-             inset 2px 2px 6px rgba(255,255,255,.9),
-             inset -3px -3px 7px rgba(180,180,180,.35);
+
+    border-radius:38px;
+
+    padding:28px;
+
+    /*
+       CLEAN FLAT EMBOSSED SURFACE
+       No white flare / radial glow.
+    */
+
+    background:linear-gradient(
+        145deg,
+        #f8f8f8,
+        #e6e6e6
+    );
+
+    box-shadow:
+        10px 10px 22px #c4c4c4,
+        -10px -10px 22px #ffffff,
+        inset 2px 2px 6px rgba(255,255,255,.9),
+        inset -3px -3px 7px rgba(180,180,180,.35);
 }
 
 .contact-header{
-  display:flex;align-items:center;gap:18px;margin-bottom:20px;
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:20px;
 }
 
 .contact-icon{
-  width:62px;height:62px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--red);font-size:25px;
-  background:linear-gradient(145deg,#fff,#e8e8e8);
-  box-shadow:6px 6px 12px #c6c6c6,-6px -6px 12px #fff;
+    width:62px;
+    height:62px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--red);
+
+    font-size:25px;
+
+    background:linear-gradient(
+        145deg,
+        #ffffff,
+        #e8e8e8
+    );
+
+    box-shadow:
+        6px 6px 12px #c6c6c6,
+        -6px -6px 12px #ffffff;
 }
 
 .contact-title{
-  font-size:21px;font-weight:900;letter-spacing:4px;
+    font-size:21px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
 }
 
 .contact-subtitle{
-  color:#666;margin-top:5px;font-size:14px;letter-spacing:1px;
+    color:#666;
+
+    margin-top:5px;
+
+    font-size:14px;
+
+    letter-spacing:1px;
 }
+
+
+/* =========================================
+   FORM
+========================================= */
 
 .form-row{
-  display:grid;grid-template-columns:1fr 1fr;gap:15px;
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
 }
 
-input,textarea{
-  width:100%;border:none;outline:none;
-  padding:17px 20px;border-radius:20px;
-  background:#eee;color:#333;font-size:15px;
-  box-shadow:inset 5px 5px 10px #d1d1d1,inset -5px -5px 10px #fff;
-  margin-bottom:15px;
+input,
+textarea{
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    padding:17px 20px;
+
+    border-radius:20px;
+
+    background:#eeeeee;
+
+    color:#333;
+
+    font-size:15px;
+
+    box-shadow:
+        inset 5px 5px 10px #d1d1d1,
+        inset -5px -5px 10px #ffffff;
+
+    margin-bottom:15px;
 }
 
-textarea{min-height:125px;resize:vertical}
+textarea{
+    min-height:110px;
 
-input:focus,textarea:focus{
-  box-shadow:inset 4px 4px 8px #ccc,inset -4px -4px 8px #fff,
-             0 0 0 2px rgba(201,22,36,.12);
+    resize:vertical;
 }
+
+input:focus,
+textarea:focus{
+
+    box-shadow:
+        inset 4px 4px 8px #ccc,
+        inset -4px -4px 8px #fff,
+        0 0 0 2px rgba(201,22,36,.12);
+}
+
+
+/* =========================================
+   RED SEND BUTTON
+========================================= */
 
 .submit{
-  width:100%;border:none;cursor:pointer;padding:18px;border-radius:30px;
-  background:linear-gradient(145deg,#ed2635,#b90f1c);
-  color:#fff;font-size:16px;font-weight:900;letter-spacing:5px;
-  box-shadow:7px 7px 15px #bcbcbc,-7px -7px 15px #fff,
-             inset 2px 2px 3px rgba(255,255,255,.25);
-  transition:.25s ease;
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        145deg,
+        #ed2635,
+        #b90f1c
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:900;
+
+    letter-spacing:5px;
+
+    box-shadow:
+        7px 7px 15px #bcbcbc,
+        -7px -7px 15px #ffffff,
+        inset 2px 2px 3px rgba(255,255,255,.25);
+
+    transition:.25s ease;
 }
 
-.submit:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.submit:hover{
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer{
-  text-align:center;margin-top:28px;color:#777;
-  font-size:13px;letter-spacing:1px;
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    margin-top:30px;
+
+    color:#777;
+
+    font-size:13px;
+
+    letter-spacing:1px;
 }
 
-.footer::before,.footer::after{
-  content:"";display:inline-block;vertical-align:middle;
-  width:55px;height:2px;background:var(--red);margin:0 15px;
+.footer::before,
+.footer::after{
+
+    content:"";
+
+    display:inline-block;
+
+    vertical-align:middle;
+
+    width:55px;
+
+    height:2px;
+
+    background:var(--red);
+
+    margin:0 15px;
 }
 
 .footer strong{
-  color:var(--red);font-family:cursive;font-size:21px;
+    color:var(--red);
+
+    font-family:cursive;
+
+    font-size:21px;
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(20px);
-  transition:opacity .7s ease,transform .7s ease;
-}
 
-.reveal.show{opacity:1;transform:translateY(0)}
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:600px){
-  body{padding:12px 8px}
-  .page{border-radius:42px;padding:24px 18px 25px}
-  .page::before{width:180px;height:11px}
 
-  .topbar{margin-top:12px}
-  .menu a{padding:8px 7px;font-size:9px}
+    body{
+        padding:12px 8px;
+    }
 
-  .logo-wrap{width:125px;height:125px;margin-bottom:20px}
-  .logo-inner{width:100px;height:100px}
-  .buddha{font-size:55px}
+    .page{
+        border-radius:42px;
 
-  .brand h1{font-size:38px;letter-spacing:6px}
-  .brand-line{width:190px;margin:15px auto}
-  .brand-subtitle{font-size:11px;letter-spacing:4px}
+        padding:35px 18px 25px;
+    }
 
-  .info-pill{min-height:50px;font-size:12px;letter-spacing:2.5px;width:95%}
-  .hero-copy{font-size:13px;line-height:1.7}
-  .btn{min-width:155px;font-size:11px}
+    .page::before{
+        width:180px;
+        height:11px;
+    }
 
-  .social{gap:12px;margin-bottom:28px}
-  .social a{width:55px;height:55px;font-size:22px}
+    .logo-wrap{
+        width:125px;
+        height:125px;
 
-  .section,.contact{padding:20px;border-radius:28px}
-  .section h2{font-size:21px}
-  .section p{font-size:13px}
+        margin-bottom:20px;
+    }
 
-  .help-grid{grid-template-columns:1fr}
-  .help-card{padding:18px}
+    .logo-inner{
+        width:100px;
+        height:100px;
+    }
 
-  .contact-header{gap:12px}
-  .contact-icon{width:52px;height:52px}
-  .contact-title{font-size:15px;letter-spacing:2px}
+    .buddha{
+        font-size:55px;
+    }
 
-  .form-row{grid-template-columns:1fr;gap:0}
-  .submit{font-size:13px;letter-spacing:3px}
-  .footer{font-size:10px}
-  .footer::before,.footer::after{width:25px;margin:0 7px}
+    .brand h1{
+        font-size:38px;
+
+        letter-spacing:6px;
+    }
+
+    .brand-line{
+        width:190px;
+
+        margin:15px auto;
+    }
+
+    .brand-subtitle{
+        font-size:11px;
+
+        letter-spacing:4px;
+    }
+
+    .info-pill{
+        min-height:50px;
+
+        font-size:12px;
+
+        letter-spacing:2.5px;
+
+        width:95%;
+    }
+
+    .social{
+        gap:12px;
+    }
+
+    .social a{
+        width:58px;
+        height:58px;
+
+        font-size:23px;
+    }
+
+    .link-card{
+        min-height:100px;
+
+        padding:14px;
+
+        border-left-width:6px;
+
+        border-radius:27px;
+    }
+
+    .link-icon{
+        width:58px;
+        height:58px;
+
+        min-width:58px;
+
+        font-size:23px;
+    }
+
+    .link-content{
+        margin-left:14px;
+    }
+
+    .link-label{
+        font-size:10px;
+
+        letter-spacing:1.5px;
+    }
+
+    .link-title{
+        font-size:18px;
+    }
+
+    .link-desc{
+        font-size:11px;
+    }
+
+    .arrow{
+        width:45px;
+        height:45px;
+
+        min-width:45px;
+
+        font-size:17px;
+    }
+
+    .contact{
+        padding:20px;
+
+        border-radius:28px;
+    }
+
+    .contact-header{
+        gap:12px;
+    }
+
+    .contact-icon{
+        width:52px;
+        height:52px;
+    }
+
+    .contact-title{
+        font-size:15px;
+
+        letter-spacing:2px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+
+        gap:0;
+    }
+
+    .submit{
+        font-size:13px;
+
+        letter-spacing:3px;
+    }
+
+    .footer{
+        font-size:10px;
+    }
+
+    .footer::before,
+    .footer::after{
+        width:25px;
+
+        margin:0 7px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 <div class="page">
 
-  <div class="topbar">
-    <div class="mini-brand"><i class="fa-solid fa-hand-holding-heart"></i> ASSIST<span>IFY</span></div>
-    <nav class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#how">How It Works</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="header-cta" href="#contact">Get Help <i class="fa-solid fa-arrow-right"></i></a>
-  </div>
 
-  <header class="hero reveal" id="home">
+    <!-- =====================================
+         BUDDHA LOGO
+    ====================================== -->
+
     <div class="logo-wrap">
-      <div class="logo-inner">
-        <i class="fa-solid fa-hand-holding-heart buddha"></i>
-      </div>
+
+        <div class="logo-inner">
+
+            <i class="fa-solid fa-spa buddha"></i>
+
+        </div>
+
     </div>
+
+
+    <!-- =====================================
+         ASSISTIFY BRAND
+    ====================================== -->
 
     <div class="brand">
-      <h1>ASSIST<span>IFY</span></h1>
-      <div class="brand-line"></div>
-      <div class="brand-subtitle">GET THINGS DONE.</div>
-    </div>
 
-    <div class="info-pill">GET HELP&nbsp; MOVE FORWARD</div>
+        <h1>
+            ASSIST<span>IFY</span>
+        </h1>
 
-    <p class="hero-copy">
-      Life gets complicated when you are trying to figure everything out alone.
-      Assistify is being built around one simple idea: when you need a hand,
-      finding the right help should feel simple, clear and human.
-    </p>
+        <div class="brand-line"></div>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">
-        <i class="fa-regular fa-paper-plane"></i>&nbsp; TALK TO US
-      </a>
-      <a class="btn btn-secondary" href="#about">
-        <i class="fa-solid fa-arrow-down"></i>&nbsp; DISCOVER ASSISTIFY
-      </a>
-    </div>
-  </header>
-
-  <div class="social reveal site-social">
-    <a href="https://www.instagram.com/goldymehrafx/?hl=en" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@GoldyMehraDailyVlog" target="_blank" aria-label="YouTube">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.facebook.com/egoldymehra" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.tiktok.com/@goldymehra.21" target="_blank" aria-label="TikTok">
-      <i class="fab fa-tiktok"></i>
-    </a>
-    <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-      <i class="fab fa-x-twitter"></i>
-    </a>
-  </div>
-
-  <section class="website-intro reveal">
-    <div class="intro-copy">
-      <div class="eyebrow">A HELPING HAND, WHEN YOU NEED ONE</div>
-      <h2>Some things are easier when you don't have to figure them out alone.</h2>
-      <p>
-        Assistify is being built to make everyday digital tasks, questions and
-        confusing processes easier to understand and easier to move through.
-      </p>
-      <div class="intro-actions">
-        <a class="btn btn-primary" href="#contact">Tell Us What You Need</a>
-        <a class="text-link" href="#about">Learn about Assistify <i class="fa-solid fa-arrow-down"></i></a>
-      </div>
-    </div>
-    <div class="intro-visual">
-      <div class="visual-ring"></div>
-      <div class="visual-card card-one">
-        <i class="fa-solid fa-circle-check"></i>
-        <span>Clear next steps</span>
-      </div>
-      <div class="visual-card card-two">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-        <span>Human help</span>
-      </div>
-      <div class="visual-card card-three">
-        <i class="fa-solid fa-route"></i>
-        <span>Move forward</span>
-      </div>
-      <div class="visual-center">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="about">
-    <div class="section-heading">
-      <div class="section-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-      <div>
-        <div class="eyebrow">WHY ASSISTIFY</div>
-        <h2>Built to make things easier.</h2>
-      </div>
-    </div>
-
-    <p>
-      Assistify is a people-first platform in the making. Instead of making
-      people search through a maze of information, the goal is to create a
-      clearer path from <strong>"I need help"</strong> to
-      <strong>"I know what to do next."</strong>
-    </p>
-
-    <div class="help-grid">
-      <div class="help-card">
-        <i class="fa-solid fa-compass"></i>
-        <h3>Find a clear direction</h3>
-        <p>Turn confusing tasks and questions into simple next steps.</p>
-      </div>
-
-      <div class="help-card">
-        <i class="fa-solid fa-people-arrows"></i>
-        <h3>Connect with people</h3>
-        <p>Make it easier to reach someone who can understand the problem.</p>
-      </div>
-
-      <div class="help-card">
-        <i class="fa-solid fa-lightbulb"></i>
-        <h3>Understand what matters</h3>
-        <p>Cut through unnecessary complexity and focus on what moves you forward.</p>
-      </div>
-
-      <div class="help-card">
-        <i class="fa-solid fa-route"></i>
-        <h3>Keep moving</h3>
-        <p>Small progress counts. The aim is to help you take the next useful step.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="how">
-    <div class="section-heading">
-      <div class="section-icon"><i class="fa-solid fa-road"></i></div>
-      <div>
-        <div class="eyebrow">THE IDEA</div>
-        <h2>Help should feel simple.</h2>
-      </div>
-    </div>
-
-    <p>
-      Assistify is designed around a straightforward journey. No giant wall
-      of instructions. No guessing where to begin. Just a human-friendly
-      path toward getting something done.
-    </p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
-        <div>
-          <strong>Tell us what you need</strong>
-          <span>Start with the problem, question or goal.</span>
+        <div class="brand-subtitle">
+            GET THINGS DONE.
         </div>
-      </div>
 
-      <div class="step">
-        <div class="step-number">02</div>
-        <div>
-          <strong>Find the right direction</strong>
-          <span>Break the situation down into practical next steps.</span>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03</div>
-        <div>
-          <strong>Take the next step</strong>
-          <span>Move from uncertainty toward progress, one step at a time.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section quote reveal">
-    <i class="fa-solid fa-quote-left"></i>
-    <p>“You don't have to figure everything out alone.”</p>
-    <small>THE ASSISTIFY IDEA</small>
-  </section>
-
-  <section class="contact reveal" id="contact">
-    <div class="contact-header">
-      <div class="contact-icon">
-        <i class="fa-regular fa-envelope"></i>
-      </div>
-      <div>
-        <div class="contact-title">LET'S TALK</div>
-        <div class="contact-subtitle">Have a question, idea or something you need help with?</div>
-      </div>
     </div>
 
-    <form action="https://formspree.io/f/mojgbdqk" method="POST">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-      </div>
 
-      <textarea name="message" placeholder="Tell us what you need help with..." required></textarea>
+    <!-- =====================================
+         GET HELP MOVE FORWARD
+    ====================================== -->
 
-      <button class="submit" type="submit">
-        <i class="fa-regular fa-paper-plane"></i>
-        &nbsp;&nbsp; SEND MESSAGE
-      </button>
-    </form>
-  </section>
+    <div class="info-pill">
 
-  <div class="footer">
-    Built by <strong>Goldy Mehra</strong> © 2026
-  </div>
+        GET HELP&nbsp; MOVE FORWARD
+
+    </div>
+
+
+    <!-- =====================================
+         SOCIAL MEDIA
+    ====================================== -->
+
+    <div class="social">
+
+        <a
+            href="https://www.instagram.com/goldymehrafx/?hl=en"
+            target="_blank"
+            aria-label="Instagram">
+
+            <i class="fab fa-instagram"></i>
+
+        </a>
+
+
+        <a
+            href="https://www.youtube.com/@GoldyMehraDailyVlog"
+            target="_blank"
+            aria-label="YouTube">
+
+            <i class="fab fa-youtube"></i>
+
+        </a>
+
+
+        <a
+            href="https://www.facebook.com/egoldymehra"
+            target="_blank"
+            aria-label="Facebook">
+
+            <i class="fab fa-facebook-f"></i>
+
+        </a>
+
+
+        <a
+            href="https://www.tiktok.com/@goldymehra.21"
+            target="_blank"
+            aria-label="TikTok">
+
+            <i class="fab fa-tiktok"></i>
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN LINKS
+    ====================================== -->
+
+    <div class="links">
+
+
+        <!-- NFC -->
+
+        <a
+            class="link-card"
+            href="https://nfc-smart-keyring-b88qfpb.gamma.site/"
+            target="_blank">
+
+            <div class="link-icon">
+
+                <i class="fa-solid fa-wifi"></i>
+
+            </div>
+
+
+            <div class="link-content">
+
+                <div class="link-label">
+                    NFC
+                </div>
+
+                <div class="link-title">
+                    Smart Keyring
+                </div>
+
+                <div class="link-desc">
+                    Tap. Share. Connect.
+                </div>
+
+            </div>
+
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+
+        <!-- WORK WITH ME -->
+
+        <a
+            class="link-card"
+            href="https://wa.me/message/BHWKDALZWNEED1"
+            target="_blank">
+
+            <div class="link-icon">
+
+                <i class="fa-solid fa-handshake"></i>
+
+            </div>
+
+
+            <div class="link-content">
+
+                <div class="link-label">
+                    WORK
+                </div>
+
+                <div class="link-title">
+                    Work With Me
+                </div>
+
+                <div class="link-desc">
+                    Let's Build Something.
+                </div>
+
+            </div>
+
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTACT
+    ====================================== -->
+
+    <div class="contact">
+
+
+        <div class="contact-header">
+
+            <div class="contact-icon">
+
+                <i class="fa-regular fa-envelope"></i>
+
+            </div>
+
+
+            <div>
+
+                <div class="contact-title">
+                    SEND A MESSAGE
+                </div>
+
+                <div class="contact-subtitle">
+                    I'll get back to you soon.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <form
+            action="https://formspree.io/f/mojgbdqk"
+            method="POST">
+
+
+            <div class="form-row">
+
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
+
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                >
+
+
+            </div>
+
+
+            <textarea
+                name="message"
+                placeholder="How can I help?"
+                required
+            ></textarea>
+
+
+            <button
+                class="submit"
+                type="submit">
+
+                <i class="fa-regular fa-paper-plane"></i>
+
+                &nbsp;&nbsp;
+
+                SEND MESSAGE
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <div class="footer">
+
+        Designed by
+
+        <strong>
+            Goldy Mehra
+        </strong>
+
+        © 2026
+
+    </div>
+
 
 </div>
-
-<script>
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
-
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-</script>
-
-</body>
-</html>
